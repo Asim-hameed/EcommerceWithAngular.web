@@ -10,7 +10,7 @@
         public string PostalCode { get; set; }
         public string EmailAddress { get; set; }
         public DateTime? EnteredDate { get; set; }
-        public virtual ICollection<CartItems> CartItems{ get;set;}= new HashSet<CartItem>();
+        public virtual ICollection<CartItem> CartItems{ get;set;}= new HashSet<CartItem>();
         public virtual ICollection<Order> OrderItems { get;set; }= new HashSet<Order>();
     }
 }
