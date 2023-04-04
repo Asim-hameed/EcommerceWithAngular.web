@@ -1,3 +1,6 @@
+using EcommerceWithAngular.web.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace EcommerceWithAngular.web
 {
     public class Program
@@ -10,6 +13,8 @@ namespace EcommerceWithAngular.web
             builder.Services.AddRazorPages();
 
             var app = builder.Build();
+            builder.Services.AddDbContext<ApplicationDbContext>
+                (Options => Options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
